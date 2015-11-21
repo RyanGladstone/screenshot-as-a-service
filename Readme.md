@@ -123,7 +123,7 @@ var screenshotServiceUrl = 'http://my.screenshot.app:3000/'; // must be running 
 // call the screenshot service using the current server as a callback
 var poller = function() {
   for (name in sites) {
-    var options = url.parse(screenshotServiceUrl + sites[name] + '?callback=http://localhost:8124/' + name);
+    var options = url.parse(screenshotServiceUrl + "/?url=" + sites[name] + '?callback=http://localhost:8124/' + name);
     http.get(options, function(res) {});
   };
 }
